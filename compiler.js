@@ -14,13 +14,9 @@ module.exports = function compiler(input) {
     //      AST (tree of objects) which represents our program
     const lispAST = parser(tokens);
 
-    console.log(JSON.stringify(lispAST, null, 2));
-
     // 3. Transformation - Transforms our original Lisp AST into
     //                     our target Javascript AST
     const jsAST = transformer(lispAST);
-
-    console.log(JSON.stringify(jsAST, null, 2));
 
     // 4. Code Generation - Transforms our target AST (object of objects)
     //                      into actual code (string)
